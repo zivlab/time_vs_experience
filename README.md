@@ -13,3 +13,4 @@ Data sets are provided in the *Data* directory.
 This the first version of the repository that includes analyses and the required data to replicate the results presented in Geva, Deitch et al., 2023.  Please make sure to use the latest version of this repository.
 
 Repository DOI:
+[![DOI](https://zenodo.org/badge/630706491.svg)](https://zenodo.org/badge/latestdoi/630706491)
