@@ -6,13 +6,9 @@ Scripts are provided in the *scripts* directory.
 Data sets are provided in the *data* directory.
 
 To perform the analysis on the provided data sets, use the *time_vs_experience_analysis.m* script located in the *scripts* directory.
-Before running the script, change the pathway in the *repository_path* variable to the pathway of the corresponding repository directory on your computer.
+Before running the script, change the path in the *repository_path* variable to the path containing the corresponding repository on your computer.
 
 ## References
-
-
-=======
-
 This the first version of the repository that includes analyses and the required data to replicate the results presented in Geva, Deitch et al., 2023.  Please make sure to use the latest version of this repository.
 
 Repository DOI:
