@@ -461,7 +461,7 @@ disp('each day of the experiment using the nonparametric Skillings-Mack test:')
 disp(' ')
 disp(statistics_table)
 
-%% Figure S1D - Fraction of place cells recorded in each day
+%% Figure S1D - Mean spatial information across the place cells' population in each day
 
 figure_name = 'Figure S1D';
 stability_measurement = mean_info_each_sess_all_mice;
@@ -597,7 +597,7 @@ disp('different environments over time using the nonparametric Skillings-Mack te
 disp(' ')
 disp(statistics_table)
 
-%% Figure S1I - Effects of time and experiences on representational drift when including reward sites
+%% Figure S1I - Effects of time and experience on representational drift when including reward sites
 
 % Repeating the ensemble rate correlation analysis (see Figure 3B) while including reward
 figure_name = 'Figure S1I (top)';
@@ -629,7 +629,7 @@ disp(' ')
 disp(statistics_table)
 
 
-%% Figure S1J - Effects of time and experiences on representational drift when including reward sites
+%% Figure S1J - Effects of time and experience on representational drift when including only reward sites
 
 % Repeating the ensemble rate correlation analysis (see Figure 3B)
 % while including only the reward sites
@@ -662,7 +662,7 @@ disp('Tuning curve correlation:')
 disp(' ')
 disp(statistics_table)
 
-%% Figure S1K - Effects of time and experiences on representational drift when including reward sites
+%% Figure S1K -  Controling for the number of registered days across environments
 
 % Repeating analysss presented in Figures 3B-3B while controling
 % for the number of registered days across environments
@@ -787,7 +787,7 @@ input_data = [0 0.7];
 figure('units','normalized','position',[0.5 0 0.125 1])
 time_vs_exp_main_visual(stability_measurement,input_data,measurement_name,figure_name,'individual');
 
-%% Figure S2D - Effects of time and experience on tuning curve correlations at the single animal resolution
+%% Figure S2D - Effects of time and experience on population vector correlations at the single animal resolution
 figure_name = 'Figure S2D';
 stability_measurement = pv_corr_elapsed_time_all_mice;
 measurement_name = 'PV correlation';
@@ -1015,10 +1015,6 @@ end
 
 %% Figure S3E - Population vector correlation as function of elapsed time for the three different model
 
-% load required colormap
-load(['Y:\personal\nitzang\time_v_exp\neuron_revisions_2022\scripts\magma_colormap.mat'])
-
-
 % Population vector correlation for the three models
 measurment_list = {full_drift_model.pv_corr_elapsed_time,...
     tuning_drift_model.pv_corr_elapsed_time,...
@@ -1048,12 +1044,14 @@ legend(plt,{'Full drift','Tuning drift','Rate drift'},'Location','southwest')
 legend('boxoff')
 axis square
 
-%% Figure S3F - Population vector correlation as function of elapsed time for the three different model
+%% Figure S3F - Decoding performance as function of elapsed time for the three different model
 
 % Decoding performance for the three models
 model_list = {full_drift_model.decoder_accuracy_elapsed_time,...
     tuning_drift_model.decoder_accuracy_elapsed_time,...
     rate_drift_model.decoder_accuracy_elapsed_time};
+
+number_of_bins = simulation_parameters.number_of_bins;
 
 plt = [];
 figure('units','normalized','position',[0.3 0.25 0.2 0.4])
