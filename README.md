@@ -5,6 +5,9 @@ This repository includes the data and scripts required for producing the main fi
 Scripts are provided in the *scripts* directory.
 Data sets are provided in the *data* directory.
 
+To perform the analysis on the provided data sets, use the *time_vs_experience_analysis.m* script located in the *scripts* directory.
+Before running the script, change the pathway in the *repository_path* variable to the pathway of the corresponding repository directory on your computer.
+
 ## References
 
 
