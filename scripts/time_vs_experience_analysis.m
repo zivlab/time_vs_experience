@@ -90,7 +90,7 @@ for env_ind = 1:2
     
     current_env_pv_corr_mat_inset = cell2mat(mean_pv_corr_all_mice(:,env_ind,:));
     avg_pv_corr_mat_across_mice_inset =  mean(current_env_pv_corr_mat_inset,3,'omitnan');
-    avg_pv_corr_mat_across_mice_inset(boolean(eye(size(avg_pv_corr_mat_across_mice_inset,1)))) = NaN;
+    avg_pv_corr_mat_across_mice_inset(logical(eye(size(avg_pv_corr_mat_across_mice_inset,1)))) = NaN;
     
     
     sub1 = axes();
