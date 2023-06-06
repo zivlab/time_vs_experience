@@ -21,6 +21,7 @@ load([data_path,'processed_data.mat'])
 load([data_path,'example_fov.mat'])
 load([data_path,'simulation_rng.mat'])
 load([data_path,'magma_colormap.mat'])
+load([data_path,'jet_colormap.mat'])
 
 %% Figure 2C - Cell registration demonstration for an example FOV
 sess_list = [1,2,10];
@@ -259,14 +260,13 @@ for cell_ind = 1:size(example_cells_table,1)
     title(['Cell ',num2str(cell_ind),':'],'FontSize',12,'Fontweight','normal');
     
 end
-suptitle('Figure 4A')
 
 %% Figure 4B - Primary peak displacement as a function of elpased time for each environment
 
 figure('units','normalized','position',[0.15 0.25 0.5 0.4])
 axes('pos',[0 1 1 1],'visible','off');
 text(0.425,-0.05,'Figure 4B','fontsize',24);
-jet_colormap = colormap(jet);
+
 for env_ind =  1:2
     
     current_env_peak_shift = frac_cells_per_pos_shift_elapsed_time_all_mice(:,env_ind);
@@ -299,7 +299,7 @@ for env_ind =  1:2
         current_interval_data = mean_peak_shift_across_mice(interval_ind,:);
         current_interval_shuffled = mean_peak_shift_across_mice_shuffled(interval_ind,:);
         
-        data_colors = jet_colormap(1+14*color_factor*(interval_ind-1),:)*0.9;
+        data_colors = jet_colormap(1+14*color_factor*(interval_ind-1),:);
         shuffle_colors = [0.2 0.2 0.2]+0.15*color_factor*(interval_ind-1);
         
         plt(interval_ind) = plot(current_interval_data,'color',data_colors,'linewidth',1.5);
@@ -862,7 +862,6 @@ for cell_ind = 1:length(example_cells)
     title(['Cell ',num2str(cell_ind),':'],'FontSize',12,'Fontweight','normal');
     
 end
-suptitle('Figure S3A')
 
 
 %% Figure S3B - Spatial tuning curves of the same simulated place cells across six days
@@ -923,8 +922,7 @@ for ref_day_ind = 1:length(reference_day_list)
         sub_plt_ind = sub_plt_ind + 1;
     end
 end
-jet_colormap = colormap(jet);
-colormap(jet_colormap*0.9)
+colormap(jet_colormap)
 
 cb = colorbar();
 cb.Position = [0.925 0.107 0.03 0.4725];
@@ -1014,7 +1012,6 @@ for model_ind = 1:3
     end
 end
 
-suptitle('Figure S3D')
 
 %% Figure S3E - Population vector correlation as function of elapsed time for the three different model
 
