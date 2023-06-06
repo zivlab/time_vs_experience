@@ -2,8 +2,8 @@
 This repository includes the data and scripts required for producing the main figures presented in Geva, Deitch et al., 2023. 
 
 ## Usage and documentation
-Scripts are provided in the *Scripts* directory.
-Data sets are provided in the *Data* directory.
+Scripts are provided in the *scripts* directory.
+Data sets are provided in the *data* directory.
 
 ## References
 
